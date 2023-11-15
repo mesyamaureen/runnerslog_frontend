@@ -5,15 +5,17 @@ import HelloWorld from './components/startseite/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/runnerslog_logo.png" width="200" height="50" />
+    <RouterLink to="/Startseite">
+      <img alt="Vue logo" class="logo" src="@/assets/runnerslog_logo.png" width="200" height="50"/>
+    </RouterLink>
 
     <div class="wrapper">
       <HelloWorld msg="Hello World!" />
 
-      <!-- <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav> -->
+      <nav>
+        <RouterLink to="/NeuerTrainingsplan">Neuer Trainingsplan</RouterLink>
+        <RouterLink to="/">Ausloggen</RouterLink>
+      </nav>
     </div>
   </header>
 
@@ -27,14 +29,14 @@ header {
 }
 
 .logo {
-  display: block;
+  /* display: block; */
   margin: 0 auto 2rem;
 }
 
 nav {
   width: 100%;
   font-size: 12px;
-  text-align: center;
+  text-align: right;
   margin-top: 2rem;
 }
 
