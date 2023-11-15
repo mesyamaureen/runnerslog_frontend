@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/startseite/HelloWorld.vue'
+import HelloWorld from './components/startseite/hello-world.vue'
 </script>
 
+<!-- Content -->
 <template>
   <header>
     <RouterLink to="/Startseite">
@@ -22,6 +23,8 @@ import HelloWorld from './components/startseite/HelloWorld.vue'
   <RouterView />
 </template>
 
+
+<!-- Overrulled CSS -->
 <style scoped>
 header {
   line-height: 1.5;
