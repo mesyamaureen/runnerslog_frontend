@@ -36,7 +36,8 @@ header {
 }
 
 .logo {
-  display: flex-start;
+  display: flex;
+  place-items: center;
   margin: 0 0 0 0;
 }
 
@@ -69,13 +70,15 @@ nav a:first-of-type {
   header {
     display: flex;
     flex-direction: row;
-    place-items: self-start;
+    place-items: center;
     padding-right: calc(var(--section-gap) / 2);
     width: fit-content;
   }
 
   .logo {
-    margin: 2rem 2rem 0 0;
+    margin: 2rem 1rem 0 0;
+    display: flex;
+    place-items: center;
   }
 
   header .wrapper {
@@ -89,7 +92,8 @@ nav a:first-of-type {
     text-align: end;
     margin-left: -1rem;
     font-size: 1rem;
-
+    display: flex;
+    justify-content: end;
     padding: 1rem 0;
     margin-top: 1rem;
   }
