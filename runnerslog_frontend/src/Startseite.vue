@@ -7,18 +7,18 @@ import HelloWorld from './components/startseite/hello-world.vue'
 <template>
   <header>
     <RouterLink to="/Startseite">
-      <img alt="Vue logo" class="logo" src="@/assets/runnerslog_logo.png" width="200" height="50"/>
+      <img alt="Vue logo" class="logo" src="@/assets/runnerslog_logo.png" width="350" height="70"/>
     </RouterLink>
 
-    <div class="wrapper">
-      <HelloWorld msg="Hello World!" />
-
-      <nav>
+    <nav>
         <RouterLink to="/NeuerTrainingsplan">Neuer Trainingsplan</RouterLink>
         <RouterLink to="/">Ausloggen</RouterLink>
       </nav>
-    </div>
   </header>
+
+  <div class="wrapper">
+      <HelloWorld msg="Hello World!" />
+    </div>
 
   <RouterView />
 </template>
@@ -29,17 +29,21 @@ import HelloWorld from './components/startseite/hello-world.vue'
 header {
   line-height: 1.5;
   max-height: 100vh;
+  margin: 2rem 2rem 0 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .logo {
-  /* display: block; */
-  margin: 0 auto 2rem;
+  display: flex-start;
+  margin: 0 0 0 0;
 }
 
 nav {
   width: 100%;
   font-size: 12px;
-  text-align: right;
+  text-align: end;
   margin-top: 2rem;
 }
 
@@ -64,22 +68,25 @@ nav a:first-of-type {
 @media (min-width: 1024px) {
   header {
     display: flex;
-    place-items: center;
+    flex-direction: row;
+    place-items: self-start;
     padding-right: calc(var(--section-gap) / 2);
+    width: fit-content;
   }
 
   .logo {
-    margin: 0 2rem 0 0;
+    margin: 2rem 2rem 0 0;
   }
 
   header .wrapper {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
+    flex-direction: column;
   }
 
   nav {
-    text-align: left;
+    text-align: end;
     margin-left: -1rem;
     font-size: 1rem;
 
