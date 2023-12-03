@@ -50,7 +50,7 @@ defineProps<{
 }>()
 
 type Lauf = { id: number, titel: string, datum: Date, art: string, distanz: number, zeit: TimeRanges, gefuehl: string, aufwand: number, beschreibung: string, schmerz: string }
-const alleLaeufe: Lauf[] = [];
+const alleLaeufe: Ref<Lauf[]> = ref([]);
 
 function loadLaeufe() {
     const endPoint = 'http://localhost:8080/alleLaeufe';
@@ -61,7 +61,7 @@ function loadLaeufe() {
     fetch(endPoint, requestOptions)
     .then(response => response.json())
     .then(result => result.forEach((l: Lauf) => {
-        alleLaeufe.push(l)
+        alleLaeufe.value.push(l)
     }))
     .catch(error => console.log('error', error))
 }
@@ -69,8 +69,9 @@ function loadLaeufe() {
 onMounted(() => {
     loadLaeufe()
 })
+</script>
 
-// export default {
+<!-- // export default {
 //     name: 'AlleLaeufe',
 //     props: ['title'],
 //     data (){
@@ -103,6 +104,7 @@ onMounted(() => {
 //     mounted() {
 //         this.loadLaeufe();
 //     }
-// }
-</script>
+// } -->
+
+
 // style
