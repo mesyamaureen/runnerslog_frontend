@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/startseite/hello-world.vue'
+import alleLaeufe from './components/lauf/alle-laeufe.vue';
 </script>
 
 <!-- Content -->
@@ -21,6 +22,10 @@ import HelloWorld from './components/startseite/hello-world.vue'
     </div>
 
   <RouterView />
+
+  <main>
+    <alle-laeufe title="Deine Läufe" />
+  </main>
 </template>
 
 
