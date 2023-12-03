@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/startseite/hello-world.vue'
 import alleLaeufe from './components/lauf/alle-laeufe.vue';
+import NeuerLauf from './components/lauf/neuer-lauf.vue';
 </script>
 
 <!-- Content -->
@@ -25,6 +26,8 @@ import alleLaeufe from './components/lauf/alle-laeufe.vue';
 
   <main>
     <alle-laeufe title="Deine Läufe" />
+    <NeuerLauf title="Neuer Lauf" />
+    <!-- <neuer-lauf title="Neuer Lauf"/> -->
   </main>
 </template>
 

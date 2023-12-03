@@ -33,14 +33,11 @@
         <td>{{l.beschreibung}}</td>
         <td>{{l.schmerz}}</td>
       </tr>
-      <!-- <tr>
-        <td>{{ nameField }}</td>
-        <td>{{ priceField }}</td>
-      </tr> -->
       </tbody>
     </table>
   </div>
 </template>
+
 // script
 <script setup lang="ts">
 import { onMounted, ref, type Ref } from "vue";
@@ -49,7 +46,7 @@ defineProps<{
     title: string
 }>()
 
-type Lauf = { id: number, titel: string, datum: Date, art: string, distanz: number, zeit: TimeRanges, gefuehl: string, aufwand: number, beschreibung: string, schmerz: string }
+export type Lauf = { id?: number, titel: string, datum: Date, art: string, distanz: number, zeit: string, gefuehl: string, aufwand: number, beschreibung: string, schmerz: string }
 const alleLaeufe: Ref<Lauf[]> = ref([]);
 
 function loadLaeufe() {
@@ -70,41 +67,5 @@ onMounted(() => {
     loadLaeufe()
 })
 </script>
-
-<!-- // export default {
-//     name: 'AlleLaeufe',
-//     props: ['title'],
-//     data (){
-//         return {
-//             laeufe: [],
-//             laufTitel: '',
-//             datum: '',
-//             art: '',
-//             distanz: '',
-//             zeit: '',
-//             gefuehl: '',
-//             aufwand: '',
-//             beschreibung: '',
-//             schmerz: ''
-//         }
-//     },
-//     methods: {
-//         loadLaeufe () {
-//             const endPoint = 'http://localhost:8080/alleLaeufe'
-//             const requestOptions = {
-//                 method: 'GET',
-//                 redirect: 'follow'
-//             }
-//             fetch(endPoint, requestOptions)
-//             .then(response => response.json())
-//             .then(result => result.forEach(this.laeufe))
-//         },
-//         createLauf () {}
-//     },
-//     mounted() {
-//         this.loadLaeufe();
-//     }
-// } -->
-
 
 // style
