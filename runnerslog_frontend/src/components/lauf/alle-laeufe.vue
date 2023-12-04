@@ -65,6 +65,7 @@ function loadLaeufe() {
 
 onMounted(() => {
     loadLaeufe()
+    
 })
 </script>
 

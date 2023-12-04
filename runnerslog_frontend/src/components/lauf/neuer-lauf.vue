@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, type Ref } from 'vue';
+import { onMounted, ref, type Ref } from 'vue';
 import { type Lauf } from './alle-laeufe.vue';
 defineProps<{
     title: string

@@ -13,21 +13,15 @@ import NeuerLauf from './components/lauf/neuer-lauf.vue';
     </RouterLink>
 
     <nav>
-        <RouterLink to="/NeuerTrainingsplan">Neuer Trainingsplan</RouterLink>
+        <RouterLink to="/NeuerTrainingsplan">Neuer Lauf</RouterLink>
+        <RouterLink to="/MeinProfil">Mein Profil</RouterLink>
         <RouterLink to="/">Ausloggen</RouterLink>
       </nav>
   </header>
 
-  <div class="wrapper">
-      <HelloWorld msg="Hello World!" />
-    </div>
-
-  <RouterView />
-
   <main>
     <alle-laeufe title="Deine Läufe" />
     <NeuerLauf title="Neuer Lauf" />
-    <!-- <neuer-lauf title="Neuer Lauf"/> -->
   </main>
 </template>
 
