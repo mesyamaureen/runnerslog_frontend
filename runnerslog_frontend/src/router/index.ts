@@ -1,20 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/registrieren.vue'
-import HelloWorldVue from '@/components/startseite/hello-world.vue'
-import startseiteVue from '@/startseite.vue'
+import startseiteLauferVue from '@/views/startseite-laufer.vue'
+import neuerLaufVue from '@/components/lauf/neuer-lauf.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: startseiteVue
+      path: '/startseite-laufer',
+      name: 'Startseite Laufer',
+      component: startseiteLauferVue
     },
     {
       path: '/neuer-lauf',
       name: 'neuer lauf',
-      component: () => import('@/views/Laufer/neuer-lauf.vue')
+      component: neuerLaufVue
     }
   ]
 })

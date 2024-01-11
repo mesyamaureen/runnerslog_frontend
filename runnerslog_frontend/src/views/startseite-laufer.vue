@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/startseite/hello-world.vue'
-import alleLaeufe from './components/lauf/alle-laeufe.vue';
-import NeuerLauf from './components/lauf/neuer-lauf.vue';
+import alleLaeufe from '@/components/lauf/alle-laeufe.vue';
+import NeuerLauf from '@/components/lauf/neuer-lauf.vue';
 </script>
 
 <!-- Content -->
