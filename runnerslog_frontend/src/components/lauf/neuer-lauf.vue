@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref, type Ref } from 'vue';
 import { type Lauf } from './alle-laeufe.vue';
+import router from '@/router';
 defineProps<{
     title: string
 }>()
@@ -39,23 +40,26 @@ function createLauf() {
     .then(r => r.json())
     .then(nL => {
         console.log('Success: ', nL);
+        router.push({ name: 'Startseite Laufer' });
     })
     .catch(error => console.log('error', error));
 }
 </script>
 
 <template>
-    <h3> {{ title }}</h3>
-    <div>
-        <input v-model="datumField" placeholder="Datum" type="date">
-        <input v-model="artField" placeholder="Art" type="text">
-        <input v-model="titelField" placeholder="Titel" type="text">
-        <input v-model="distanzField" placeholder="Distanz" type="number">
-        <input v-model="zeitField" placeholder="Zeit" type="text">
-        <input v-model="gefuehlField" placeholder="Gefuehl" type="text">
-        <input v-model="aufwandField" placeholder="Aufwand" type="number">
-        <input v-model="beschreibungField" placeholder="Beschreibung" type="text">
-        <input v-model="schmerzField" placeholder="Schmerz" type="text">
-        <button type="button" @click="createLauf()">Erstellen</button>
-    </div>
+    <RouterView>
+        <h3> {{ title }}</h3>
+        <div>
+            <input v-model="datumField" placeholder="Datum" type="date">
+            <input v-model="artField" placeholder="Art" type="text">
+            <input v-model="titelField" placeholder="Titel" type="text">
+            <input v-model="distanzField" placeholder="Distanz" type="number">
+            <input v-model="zeitField" placeholder="Zeit" type="text">
+            <input v-model="gefuehlField" placeholder="Gefuehl" type="text">
+            <input v-model="aufwandField" placeholder="Aufwand" type="number">
+            <input v-model="beschreibungField" placeholder="Beschreibung" type="text">
+            <input v-model="schmerzField" placeholder="Schmerz" type="text">
+            <button type="button" @click="createLauf()">Erstellen</button>
+        </div>
+    </RouterView>
 </template>

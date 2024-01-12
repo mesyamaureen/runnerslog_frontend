@@ -24,7 +24,7 @@
       <tr v-for="l in alleLaeufe" :key="l.id">
         <td>{{l.id}}</td>
         <td>{{l.datum}}</td>
-        <td>{{l.art}}</td>
+        <td id="art-clickable" @click="handleClick()">{{l.art}}</td>
         <td>{{l.titel}}</td>
         <td>{{l.distanz}}</td>
         <td>{{l.zeit}}</td>
@@ -40,11 +40,16 @@
 
 // script
 <script setup lang="ts">
+import router from "@/router";
 import { onMounted, ref, type Ref } from "vue";
 
 defineProps<{
     title: string
 }>()
+
+function handleClick() {
+  router.push('Neuer lauf')
+}
 
 export type Lauf = { id?: number, titel: string, datum: Date, art: string, distanz: number, zeit: string, gefuehl: string, aufwand: number, beschreibung: string, schmerz: string }
 const alleLaeufe: Ref<Lauf[]> = ref([]);
@@ -70,3 +75,10 @@ onMounted(() => {
 </script>
 
 // style
+<style scoped>
+#art-clickable {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}
+</style>

@@ -1,26 +1,12 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import alleLaeufe from '@/components/lauf/alle-laeufe.vue';
-import NeuerLauf from '@/components/lauf/neuer-lauf.vue';
 </script>
 
 <!-- Content -->
 <template>
-  <header>
-    <RouterLink to="/Startseite">
-      <img alt="Vue logo" class="logo" src="@/assets/runnerslog_logo.png" width="350" height="70"/>
-    </RouterLink>
-
-    <nav>
-        <RouterLink to="/NeuerTrainingsplan">Neuer Lauf</RouterLink>
-        <RouterLink to="/MeinProfil">Mein Profil</RouterLink>
-        <RouterLink to="/">Ausloggen</RouterLink>
-      </nav>
-  </header>
-
   <main>
     <alle-laeufe title="Deine Läufe" />
-    <NeuerLauf title="Neuer Lauf" />
   </main>
 </template>
 

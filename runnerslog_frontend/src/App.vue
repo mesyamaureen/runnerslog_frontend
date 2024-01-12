@@ -1,19 +1,25 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import NeuerLauf from '@/components/lauf/neuer-lauf.vue'
-// TODO: create Nachricht when lauf component is successfully created
 </script>
 
 <template>
-    <main>
-        <NeuerLauf title="Neuer Lauf erstellen" />
-    </main>
+
+  <header>
+    <RouterLink to="/startseite-laufer">
+      <img alt="Vue logo" class="logo" src="@/assets/runnerslog_logo.png" width="350" height="70"/>
+    </RouterLink>
+
+    <nav>
+        <RouterLink :to="{ name: 'Neuer lauf' }">Neuer Lauf</RouterLink>
+        <RouterLink to="/MeinProfil">Mein Profil</RouterLink>
+        <RouterLink to="/">Ausloggen</RouterLink>
+      </nav>
+  </header>
+
+  <RouterView />
 </template>
-
-
-// if there's an overruled css, add here
 <style scoped>
-header-title {
+header {
   line-height: 1.5;
   max-height: 100vh;
   margin: 2rem 2rem 0 2rem;
@@ -54,7 +60,7 @@ nav a:first-of-type {
 }
 
 @media (min-width: 1024px) {
-  header-title {
+  header {
     display: flex;
     flex-direction: row;
     place-items: center;
@@ -68,7 +74,7 @@ nav a:first-of-type {
     place-items: center;
   }
 
-  header-title .wrapper {
+  header .wrapper {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
